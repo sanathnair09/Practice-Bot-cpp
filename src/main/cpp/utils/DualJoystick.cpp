@@ -1,6 +1,6 @@
 #include "utils/DualJoystick.h"
 #include "utils/Constants.h"
-#include <bits/stdc++.h>
+#include <iostream>
 
 DualJoystick::DualJoystick()
 {
@@ -28,15 +28,24 @@ double DualJoystick::calculateDeadZone(double value)
 double DualJoystick::getSlowMode()
 
 {
-    double value = getRightRawAxis(DIAL);
-    double clampedValue = std::clamp(value, 1., 0.);
-    std::cout << "clamped" << clampedValue << std::endl;
-    std::cout << "whack math" << ((getRightRawAxis(DIAL) * -1) + 1) / 2 << std::endl;
-
+    if (DEBUG)
+    {
+        std::cout << "whack math" << ((getRightRawAxis(DIAL) * -1) + 1) / 2 << std::endl;
+    }
     return ((getRightRawAxis(DIAL) * -1) + 1) / 2;
 }
 
 frc::Joystick *DualJoystick::getRightJoystick()
 {
     return right;
+}
+
+frc::Joystick *DualJoystick::getLeftJoystick()
+{
+    return right;
+}
+
+double DualJoystick::getAirplaneSpeed()
+{
+    return ((getRightRawAxis(DIAL) * -1) + 1) / 2;
 }

@@ -42,7 +42,7 @@ private:
 
   // commands
   Drive *drive = new Drive(driveTrain, joysticks);
-  ShootAirplane *shootAirplane = new ShootAirplane(airplaneLauncher);
+  ShootAirplane *shootAirplane = new ShootAirplane(airplaneLauncher, joysticks);
 
   void ConfigureButtonBindings();
 };

@@ -4,10 +4,11 @@
 
 #include "commands/ShootAirplane.h"
 
-ShootAirplane::ShootAirplane(AirplaneLauncher *airplaneLauncher)
+ShootAirplane::ShootAirplane(AirplaneLauncher *airplaneLauncher, DualJoystick *joysticks)
 {
   // Use addRequirements() here to declare subsystem dependencies.
   this->airplaneLauncher = airplaneLauncher;
+  this->joysticks = joysticks;
 }
 
 // Called when the command is initially scheduled.
@@ -16,7 +17,8 @@ void ShootAirplane::Initialize() {}
 // Called repeatedly when this Command is scheduled to run
 void ShootAirplane::Execute()
 {
-  airplaneLauncher->shoot();
+  double speed = joysticks->getAirplaneSpeed();
+  airplaneLauncher->shoot(speed);
 }
 
 // Called once the command ends or is interrupted.

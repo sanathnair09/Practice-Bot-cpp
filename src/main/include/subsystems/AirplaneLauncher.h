@@ -22,7 +22,7 @@ public:
     delete left;
     delete right;
   }
-  void shoot();
+  void shoot(double speed);
   void stop();
 
 private:

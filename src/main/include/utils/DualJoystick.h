@@ -18,7 +18,8 @@ public:
     double getLeftRawAxis(int axis);
     double getSlowMode();
     frc::Joystick *getRightJoystick();
-
+    frc::Joystick *getLeftJoystick();
+    double getAirplaneSpeed();
     ~DualJoystick()
     {
         delete right;

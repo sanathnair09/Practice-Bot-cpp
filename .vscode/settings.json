@@ -23,6 +23,9 @@
     "ratio": "cpp",
     "algorithm": "cpp",
     "core": "cpp",
-    "istream": "cpp"
+    "istream": "cpp",
+    "memory": "cpp",
+    "future": "cpp",
+    "functional": "cpp"
   }
 }

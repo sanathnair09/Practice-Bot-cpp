@@ -5,9 +5,14 @@
 #include "subsystems/DriveTrain.h"
 #include "ctre/Phoenix.h"
 #include "utils/Constants.h"
+#include <iostream>
 
 DriveTrain::DriveTrain()
 {
+    if (DEBUG)
+    {
+        std::cout << "Init DriveTrain" << std::endl;
+    }
     backL->Follow(*frontL);
     backR->Follow(*frontR);
 
