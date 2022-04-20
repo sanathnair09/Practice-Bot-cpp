@@ -12,12 +12,12 @@ DualJoystick::DualJoystick()
 
 double DualJoystick::getRightRawAxis(int axis)
 {
-    return right->GetRawAxis(axis);
+    return calculateDeadZone(right->GetRawAxis(axis));
 }
 
 double DualJoystick::getLeftRawAxis(int axis)
 {
-    return left->GetRawAxis(axis);
+    return calculateDeadZone(left->GetRawAxis(axis));
 }
 
 double DualJoystick::calculateDeadZone(double value)
@@ -28,7 +28,7 @@ double DualJoystick::calculateDeadZone(double value)
 double DualJoystick::getSlowMode()
 
 {
-    return ((getRightRawAxis(DIAL) * -1) + 1) / 2;
+    return ((getLeftRawAxis(DIAL) * -1) + 1) / 2;
 }
 
 frc::Joystick *DualJoystick::getRightJoystick()
@@ -43,5 +43,5 @@ frc::Joystick *DualJoystick::getLeftJoystick()
 
 double DualJoystick::getAirplaneSpeed()
 {
-    return ((getLeftRawAxis(DIAL) * -1) + 1) / 2;
+    return ((getRightRawAxis(DIAL) * -1) + 1) / 2;
 }

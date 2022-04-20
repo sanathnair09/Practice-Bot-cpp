@@ -6,11 +6,15 @@
 
 TurnToAngle::TurnToAngle(DriveTrain *driveTrain)
 {
+  AddRequirements(driveTrain);
   // Use addRequirements() here to declare subsystem dependencies.
 }
 
 // Called when the command is initially scheduled.
-void TurnToAngle::Initialize() {}
+void TurnToAngle::Initialize() {
+  navX->Reset();
+  
+}
 
 // Called repeatedly when this Command is scheduled to run
 void TurnToAngle::Execute() {}
