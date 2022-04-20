@@ -29,6 +29,10 @@ constexpr int DEADZONE = 3;
 
 constexpr bool DEBUG = true;
 
+constexpr double kP = 1.0;
+constexpr double kI = 1.0;
+constexpr double kD = 1.0;
+
 enum DriveMode
 {
     ArcadeDrive,

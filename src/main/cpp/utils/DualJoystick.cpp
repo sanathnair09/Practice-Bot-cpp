@@ -28,10 +28,6 @@ double DualJoystick::calculateDeadZone(double value)
 double DualJoystick::getSlowMode()
 
 {
-    if (DEBUG)
-    {
-        std::cout << "whack math" << ((getRightRawAxis(DIAL) * -1) + 1) / 2 << std::endl;
-    }
     return ((getRightRawAxis(DIAL) * -1) + 1) / 2;
 }
 
@@ -47,5 +43,5 @@ frc::Joystick *DualJoystick::getLeftJoystick()
 
 double DualJoystick::getAirplaneSpeed()
 {
-    return ((getRightRawAxis(DIAL) * -1) + 1) / 2;
+    return ((getLeftRawAxis(DIAL) * -1) + 1) / 2;
 }

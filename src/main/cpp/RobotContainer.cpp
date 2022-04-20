@@ -19,7 +19,7 @@ void RobotContainer::ConfigureButtonBindings()
 {
   button8->WhenPressed(new frc2::InstantCommand([this]
                                                 { ChangeDriveMode(); }));
-  button1->WhenPressed(shootAirplane);
+  button1->WhenHeld(shootAirplane);
 }
 
 void RobotContainer::ChangeDriveMode()
